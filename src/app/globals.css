@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom styles for CV */
+.vietnam-flag {
+    background: linear-gradient(to bottom, #da020e 50%, #ffff00 50%);
+}
+
+.vietnam-flag::after {
+    content: "★";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff00;
+    font-size: 0.75rem;
+}
+
+/* Input default styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    background-color: #ffffff;
+    color: #1e2939;
+}
+
+/* Text with line breaks */
+.whitespace-pre-line {
+    white-space: pre-line;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* PDF Export Styles */
+.pdf-export {
+    background: white !important;
+    color: black !important;
+    font-family: "Inter", sans-serif !important;
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+.pdf-export *,
+.pdf-export .bg-gradient-to-br {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+
+.pdf-export .text-blue-600 {
+    color: #1e40af !important;
+}
+.pdf-export .text-gray-800 {
+    color: #1f2937 !important;
+}
+.pdf-export .text-gray-600 {
+    color: #4b5563 !important;
+}
+.pdf-export .border {
+    border-color: #e5e7eb !important;
+}
+.pdf-export .rounded-lg {
+    border-radius: 8px !important;
+}
+
+/* Consolidated Print & PDF Styles */
+@media print {
+    .no-print,
+    .fixed {
+        display: none !important;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    .print-break {
+        page-break-inside: avoid;
+    }
+    .bg-gradient-to-br {
+        background: white !important;
+    }
+    .text-blue-600 {
+        color: #1e40af !important;
+    }
+    .text-gray-800 {
+        color: #1f2937 !important;
+    }
+    .text-gray-600 {
+        color: #4b5563 !important;
+    }
+}
+
+/* Page break optimization */
+.pdf-export .space-y-4 > *,
+.pdf-export .space-y-6 > * {
+    page-break-inside: avoid;
+}
+
+/* Animations */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
 }
