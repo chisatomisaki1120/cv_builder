@@ -1,24 +1,3 @@
-/**
- * CV Data Management System
- * 
- * This file contains all data types for CV website.
- * 
- * HƯỚNG DẪN SỬ DỤNG:
- * 1. CV bắt đầu hoàn toàn trống - không có dữ liệu mặc định
- * 2. Truy cập /admin để thêm thông tin cá nhân
- * 3. Đăng nhập với: username "chisato", password "chisatomisaki1120"
- * 4. Thêm thông tin trong từng tab tương ứng
- * 5. Dữ liệu sẽ được lưu trong localStorage của trình duyệt
- * 
- * TÍNH NĂNG:
- * - Skills có thể có category tùy ý (programming, design, marketing, etc.)
- * - Nhập trực tiếp từ bàn phím trong admin panel
- * - Tự động group và hiển thị theo categories
- * - Upload avatar với compression tự động
- * - Export PDF chất lượng cao
- */
-
-// CV Data Store
 export interface SocialMedia {
     platform: 'facebook' | 'twitter' | 'linkedin' | 'instagram' | 'github' | 'youtube' | 'tiktok' | 'telegram' | 'whatsapp' | 'discord' | 'website' | 'other';
     username: string;

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pham Duy Hoang - CV",
-  description: "Curriculum Vitae của Pham Duy Hoang - SEO Specialist & Web Developer",
+  title: "CV Builder",
+  description: "Tạo và quản lý CV trực tuyến - CV Builder với tính năng import PDF và export PDF",
 };
 
 export default function RootLayout({
